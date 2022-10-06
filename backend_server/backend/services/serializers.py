@@ -1,10 +1,8 @@
-from abc import ABC
-
 from django.contrib.auth.models import User, Group
 from rest_framework import serializers
 
 
-class PredictImageSerializer(serializers.Serializer, ABC):
+class PredictImageSerializer(serializers.Serializer):
     url = serializers.CharField(max_length=500)
     label = serializers.CharField(max_length=5, default='')
 

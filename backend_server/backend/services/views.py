@@ -2,13 +2,13 @@ from django.shortcuts import render
 from django.contrib.auth import login
 from rest_framework import status, generics, permissions
 from rest_framework.response import Response
-from serializers import UserSerializer, RegisterSerializer
+from services.serializers import UserSerializer, RegisterSerializer
 from rest_framework.views import APIView
 from urllib.parse import urlparse
-from models import *
+from services.models import *
 import os
-from AIModel import AIModel
-from AIModel import downloadImage as download_image
+from services.AIModel import AIModel
+from services.AIModel import downloadImage as download_image
 import uuid
 import json
 from knox.models import AuthToken

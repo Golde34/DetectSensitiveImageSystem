@@ -28,7 +28,7 @@ class Pipe:
             transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
         ])
         self.label = ['nude', 'sexy', 'safe']
-        self.device = torch.device("cuda:1" if torch.cuda.is_available() else "cpu")
+        self.device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
         self.transform = transforms.Compose([
             transforms.Resize(256),
             transforms.CenterCrop(224),
