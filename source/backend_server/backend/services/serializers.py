@@ -7,7 +7,7 @@ class PredictImageSerializer(serializers.Serializer):
     label = serializers.CharField(max_length=5, default='')
 
     def validate(self, data):
-        # other wise you can set default value of age here,
+        # otherwise you can set default value of age here,
         if data.get('label', None) is None:   # true only when age = serializer.IntergerField(required=False)
             data['label'] = ''
         return data

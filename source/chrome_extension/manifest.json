@@ -1,0 +1,45 @@
+{
+	"manifest_version": 2,
+	"name": "Detect Image Webpage Tool",
+	"version": "1.0",
+	"description": "Taken all image of webpage and processing",
+    "icons": {                   
+        "36": "/images/icon36.png",
+        "48": "/images/icon48.png",
+        "96": "/images/icon96.png",
+        "256": "/images/icon.png"  
+    },    
+    "browser_action": {
+        "default_icon": {                   
+            "36": "/images/icon36.png",
+            "48": "/images/icon48.png",
+            "96": "/images/icon96.png",
+            "256": "/images/icon.png"  
+        },      
+		"default_popup": "popup.html",
+		"default_title": "Download Images From Google"
+	},
+	"permissions": [
+        "storage",
+        "downloads",
+        "activeTab",
+        "declarativeContent",
+        "tabs",
+        "http://*/*",
+        "https://*/*"
+    ],
+    "background" : {
+        "scripts" : ["background.js"],
+        "persistent" : true
+    }, 
+    "web_accessible_resources": [
+        "style.css"
+    ], 
+    "content_scripts": [
+    	{
+    		"matches": ["http://*/*", "https://*/*"],
+    		"css": ["style.css"],
+    		"js": ["custom.js"]
+    	}
+    ]
+}
